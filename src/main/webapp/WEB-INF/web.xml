@@ -3,6 +3,10 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <context-param>
+        <param-name>javax.faces.CONFIG_FILES</param-name>
+        <param-value>/application.properties.xml</param-value>
+    </context-param>
     <filter>
         <filter-name>CharacterEncodingFilter</filter-name>
         <filter-class>com.goufaning.system.filter.CharacterEncodingFilter</filter-class>
@@ -71,9 +75,18 @@
         <servlet-name>OutBaobiaoServlet</servlet-name>
         <servlet-class>com.goufaning.system.servlet.OutBaobiaoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
     <servlet-mapping>
         <servlet-name>OutBaobiaoServlet</servlet-name>
         <url-pattern>/OutBaobiaoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
 
 
