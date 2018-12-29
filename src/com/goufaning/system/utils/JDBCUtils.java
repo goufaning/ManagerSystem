@@ -8,10 +8,6 @@ import java.util.Properties;
 /**
  * Created by gfn on 2016-12-29.
  */
-
-
-
-
 public class JDBCUtils {
 
     private static String driverName;
@@ -19,7 +15,7 @@ public class JDBCUtils {
     private static String user;
     private static String password;
 
-    /*
+    /**
      * 静态代码块，类初始化时加载数据库驱动
      */
     static {
