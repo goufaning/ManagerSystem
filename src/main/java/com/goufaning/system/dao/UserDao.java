@@ -17,7 +17,7 @@ public class UserDao {
         Connection conn = null;
         PreparedStatement perstmt  = null;
         ResultSet rs = null;
-        String sql = "insert imto user_332(name,password,permissions,description) values(?,?,?,?)";
+        String sql = "insert into user_332(name,password,permissions,description) values(?,?,?,?)";
         try {
             conn = JDBCUtils.getConnection();
             perstmt  = conn.prepareStatement(sql);
