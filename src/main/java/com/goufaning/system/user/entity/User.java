@@ -1,9 +1,15 @@
-package com.goufaning.system.bean;
+package com.goufaning.system.user.entity;
+
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.lang.Nullable;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  * Created by gfn on 2017-01-01.
  */
-public class User {
+public class User implements RowMapper<User> {
     private int id;
     private String name;
     private String password;
@@ -48,5 +54,17 @@ public class User {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Nullable
+    @Override
+    public User mapRow(ResultSet resultSet, int i) throws SQLException {
+        User user = new User();
+        user.setId(resultSet.getInt("id"));
+        user.setName(resultSet.getString("name"));
+        user.setPassword(resultSet.getString("password"));
+        user.setPermissions("1");
+        user.setDescription(resultSet.getString("description"));
+        return user;
     }
 }

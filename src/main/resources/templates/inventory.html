@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>$Title$</title>
+    <link rel="stylesheet" href="../static/css/main.css" type="text/css" />
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css" />
+    <script src="../static/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../static/js/style.js"></script>
+    <script type="text/javascript" src="../static/js/menu.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#menu1").addClass("select").siblings().removeClass("select");
+        });
+    </script>
+
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation"> 
+	<div class="container">
+		<div class="container-fluid"> 
+	    <div class="navbar-header"> 
+	        <a class="navbar-brand" href="#">仓库宝</a> 
+	    </div> 
+	    <ul class="nav navbar-nav navbar-right"> 
+	        <li><a href="#"><span class="glyphicon glyphicon-user"></span> 注册</a></li> 
+	        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li> 
+	    </ul> 
+	</div> 
+	</div>
+</nav>
+<div class="container">
+    
+    <div id="option">
+        <div id="jcFrame">
+            <ul id="jcSide">
+                <p>查询</p>
+                <li id="menu1" style="margin-top: 10px"><a href="${pageContext.request.contextPath}/InventoryServlet">产品库存</a></li>
+                <p>出入</p>
+                <li id="menu2"><a href="in.jsp">入库管理</a></li>
+                <li id="menu3"><a href="out.jsp">出库管理</a></li>
+                <li id="menu4"><a href="manager.jsp">仓库管理</a></li>
+                <p>报表</p>
+                <li id="menu5"><a href="${pageContext.request.contextPath}/InBaobiaoServlet">统计报表</a></li>
+            </ul>
+        </div>
+    </div>
+    <link type="text/css"rel="stylesheet" href="css/main.css">
+
+    <div id="a" class="div_rigth">
+        <label class="title"><a href="#" class="back"><&nbsp;返回</a> <span>产品库存</span></label>
+        <hr />
+        <div class="main_form autoScroll" style="height: 600px">
+            <table  frame=hsides>
+                <thead>
+                <tr>
+                    <td width="35px">序号</td>
+                    <td width="110px">品名型号</td>
+                    <td width="110px">规格</td>
+                    <td width="110px">最近出入库时间</td>
+                    <td width="110px">单价</td>
+                    <td width="110px">数量</td>
+                    <td width="110px">仓库</td>
+                </tr>
+                </thead>
+                <tbody id="tab">
+                    <tr>
+                        <td>${status.index+1}</td>
+                        <td>${productmap[productId].name}</td>
+                        <td>台</td>
+                        <td>${inventory.updateDate}</td>
+                        <td>${productmap[productId].price}</td>
+                        <td>${inventory.num}</td>
+                        <td>${warehousemap[warehouseId].name}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

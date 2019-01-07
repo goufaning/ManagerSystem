@@ -1,16 +1,32 @@
 package com.goufaning.system.user.controller;
 
-import org.springframework.stereotype.Controller;
+import com.goufaning.system.user.entity.User;
+import com.goufaning.system.user.service.UserServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
-@Controller
+
+@RestController
 public class LoginController {
+    @Autowired
+    private UserServiceImpl userService;
 
     @RequestMapping("/login")
-    String loginPage(HttpServletRequest request) {
+    ModelAndView loginPage(HttpServletRequest request) {
         request.setAttribute("key", "hello world");
-        return "index";
+        return new ModelAndView("index");
     }
+
+    @RequestMapping("/loginCheck")
+    public User login(HttpServletRequest request) {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        User user = userService.getUserByNameAndPassword(username, password);
+        return user;
+    }
+
 }

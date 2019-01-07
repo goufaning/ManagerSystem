@@ -2,6 +2,7 @@ package com.goufaning.system.servlet;
 
 import com.goufaning.system.bean.*;
 import com.goufaning.system.service.*;
+import com.goufaning.system.user.entity.User;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 

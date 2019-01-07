@@ -1,6 +1,6 @@
 package com.goufaning.system.service;
 
-import com.goufaning.system.bean.User;
+import com.goufaning.system.user.entity.User;
 import com.goufaning.system.dao.UserDao;
 
 import java.util.List;

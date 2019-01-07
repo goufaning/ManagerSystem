@@ -1,6 +1,6 @@
 package com.goufaning.system.servlet;
 
-import com.goufaning.system.bean.User;
+import com.goufaning.system.user.entity.User;
 import com.goufaning.system.service.UserService;
 
 import javax.servlet.ServletException;
