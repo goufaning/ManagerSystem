@@ -7,6 +7,8 @@
     <script src="../static/js/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="../static/js/style.js"></script>
     <script type="text/javascript" src="../static/js/menu.js"></script>
+    <script type="text/javascript" src="../static/js/script.js"></script>
+    <script type="text/javascript" src="../static/bootstrap/js/bootstrap.js"></script>
     <script>
         $(document).ready(function() {
             $("#menu1").addClass("select").siblings().removeClass("select");
@@ -20,62 +22,177 @@
 		<div class="container-fluid"> 
 	    <div class="navbar-header"> 
 	        <a class="navbar-brand" href="#">仓库宝</a> 
-	    </div> 
-	    <ul class="nav navbar-nav navbar-right"> 
-	        <li><a href="#"><span class="glyphicon glyphicon-user"></span> 注册</a></li> 
-	        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li> 
-	    </ul> 
+	    </div>
+	    <div> 
+		    <ul class="nav navbar-nav navbar-right">
+			    <li class="dropdown">
+			    	<a  href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+			    		<span class="glyphicon glyphicon-user"></span>
+		                <span>欢迎&nbsp;</span> <span>用户名:管理员</span>
+		                <!--小三角-->
+		                <span class="caret"></span>
+		            </a >
+		            <ul class="dropdown-menu">
+		                <li>
+		                    <a href="#"> 
+		                    <span class="glyphicon glyphicon-pencil"></span> &nbsp;&nbsp;修改个人信息
+		                	</a>
+		                </li>
+		                <li>
+		                    <a href="javascript:void(0)">
+		                     <span class="glyphicon glyphicon-off"></span> &nbsp;&nbsp;注销登录
+		                    </a>
+		                </li>
+		            </ul>
+		        </li>
+		    </ul> 
+		</div>
 	</div> 
 	</div>
 </nav>
 <div class="container">
-    
-    <div id="option">
-        <div id="jcFrame">
-            <ul id="jcSide">
-                <p>查询</p>
-                <li id="menu1" style="margin-top: 10px"><a href="${pageContext.request.contextPath}/InventoryServlet">产品库存</a></li>
-                <p>出入</p>
-                <li id="menu2"><a href="in.jsp">入库管理</a></li>
-                <li id="menu3"><a href="out.jsp">出库管理</a></li>
-                <li id="menu4"><a href="manager.jsp">仓库管理</a></li>
-                <p>报表</p>
-                <li id="menu5"><a href="${pageContext.request.contextPath}/InBaobiaoServlet">统计报表</a></li>
-            </ul>
-        </div>
-    </div>
-    <link type="text/css"rel="stylesheet" href="css/main.css">
+	<div class="row">
+		<div class="col-md-3 col-sm-3">
+			<div class="page-sidebar">
+				<ul class="mainmenu">
+					<li>
+						<span class="glyphicon glyphicon-user">   库存管理</span>
+					</li>
+					<ul class="submenu">
+						<div class="expand-triangle"></div>
+						<!--若为普通管理员-->
+						<li><span>库存查询</span></li>
+						<!--若为超级管理员-->
+						<li><span>出入库记录</span></li>
+					</ul>
+					<li>
+						<span class="glyphicon glyphicon-envelope">   仓库管理</span>
+						<div class="messages">23</div>
+					</li>
+					<ul class="submenu">
+						<div class="expand-triangle"></div>
+						<li><span>货物入库</span></li>
+						<li><span>货物出库</span></li>
+					</ul>
+					<li>
+						<span class="glyphicon glyphicon-cog">  人员管理</span>
+					</li>
+					<ul class="submenu">
+						<div class="expand-triangle"></div>
+						<li><span>仓库管理员管理</span></li>
+					</ul>
+					<li>
+						<span class="glyphicon glyphicon-lock"> 基础数据</span>
+					</li>
+					<ul class="submenu">
+						<div class="expand-triangle"></div>
+						<li><span>供应商信息管理</span></li>
+						<li><span>客户信息管理</span></li>
+						<li><span>货物信息管理</span></li>
+						<li><span>仓库信息管理</span></li>
+					</ul>
+					<li>
+						<span class="glyphicon glyphicon-lock"> 系统维护</span>
+					</li>
+					<ul class="submenu">
+						<div class="expand-triangle"></div>
+						<li><span>更改密码</span></li>
+						<li><span>系统日志</span></li>
+						<li><span>登陆日志</span></li>
+						<li><span>Privacy</span></li>
+						<li><span>Payments</span></li>
+					</ul>
+				</ul>
+    		</div>
+		</div>
+      	<div class="col-md-9 col-sm-9">
+      		<div id="a" class="panel panel-default">
+      			<ol class="breadcrumb">主页</ol>
+        	<div class="panel-body">
+            <div class="row" style="margin-top: 100px; margin-bottom: 100px">
+				<div class="col-md-1"></div>
+				<div class="col-md-10" style="text-align: center">
+					<!--库存查询div-->
+					<div class="col-md-4 col-sm-4">
+						<a href="javascript:void(0)" class="thumbnail shortcut"> 
+							<img src="../static/images/stock_search-512.png" alt="库存查询"
+							class="img-rounded link" style="width: 150px; height: 150px;">
+							<div class="caption">
+								<h3 class="title">库存查询</h3>
+							</div>
+						</a>
+					</div>
+					<!--货物入库div-->
+					<div class="col-md-4 col-sm-4">
+						<a href="javascript:void(0)" class="thumbnail shortcut"> <img
+							src="../static/images/stock_in-512.png" alt="货物入库"
+							class="img-rounded link" style="width: 150px; height: 150px;">
+							<div class="caption">
+								<h3 class="title">货物入库</h3>
+							</div>
+						</a>
+					</div>
+					<!--货物出库div-->
+					<div class="col-md-4 col-sm-4">
+						<a href="javascript:void(0)" class="thumbnail shortcut"> <img
+							src="../static/images/stock_out-512.png" alt="货物出库"
+							class="img-rounded link" style="width: 150px; height: 150px;">
+							<div class="caption">
+								<h3 class="title">货物出库</h3>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-1"></div>
+			</div>
+			</div>
+        	</div>
+    	</div>
 
-    <div id="a" class="div_rigth">
-        <label class="title"><a href="#" class="back"><&nbsp;返回</a> <span>产品库存</span></label>
-        <hr />
-        <div class="main_form autoScroll" style="height: 600px">
-            <table  frame=hsides>
-                <thead>
-                <tr>
-                    <td width="35px">序号</td>
-                    <td width="110px">品名型号</td>
-                    <td width="110px">规格</td>
-                    <td width="110px">最近出入库时间</td>
-                    <td width="110px">单价</td>
-                    <td width="110px">数量</td>
-                    <td width="110px">仓库</td>
-                </tr>
-                </thead>
-                <tbody id="tab">
-                    <tr>
-                        <td>${status.index+1}</td>
-                        <td>${productmap[productId].name}</td>
-                        <td>台</td>
-                        <td>${inventory.updateDate}</td>
-                        <td>${productmap[productId].price}</td>
-                        <td>${inventory.num}</td>
-                        <td>${warehousemap[warehouseId].name}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+    	<div class="col-md-9 col-sm-9">
+      		<div id="a" class="panel panel-default">
+      			<ol class="breadcrumb">主页</ol>
+        	<div class="panel-body">
+            <div class="row" style="margin-top: 100px; margin-bottom: 100px">
+				<div class="col-md-1"></div>
+				<div class="col-md-10" style="text-align: center">
+					<!--库存查询div-->
+					<div class="col-md-4 col-sm-4">
+						<a href="javascript:void(0)" class="thumbnail shortcut"> 
+							<img src="../static/images/stock_search-512.png" alt="库存查询"
+							class="img-rounded link" style="width: 150px; height: 150px;">
+							<div class="caption">
+								<h3 class="title">库存查询</h3>
+							</div>
+						</a>
+					</div>
+					<!--货物入库div-->
+					<div class="col-md-4 col-sm-4">
+						<a href="javascript:void(0)" class="thumbnail shortcut"> <img
+							src="../static/images/stock_in-512.png" alt="货物入库"
+							class="img-rounded link" style="width: 150px; height: 150px;">
+							<div class="caption">
+								<h3 class="title">货物入库</h3>
+							</div>
+						</a>
+					</div>
+					<!--货物出库div-->
+					<div class="col-md-4 col-sm-4">
+						<a href="javascript:void(0)" class="thumbnail shortcut"> <img
+							src="../static/images/stock_out-512.png" alt="货物出库"
+							class="img-rounded link" style="width: 150px; height: 150px;">
+							<div class="caption">
+								<h3 class="title">货物出库</h3>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-1"></div>
+			</div>
+			</div>
+        	</div>
+    	</div>
+    </div>   
 </div>
 </body>
 </html>
