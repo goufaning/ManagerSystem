@@ -2,10 +2,8 @@ package com.goufaning.system.servlet;
 
 import com.goufaning.system.bean.Product;
 import com.goufaning.system.bean.Provider;
-import com.goufaning.system.bean.WareHouse;
 import com.goufaning.system.service.ProductService;
 import com.goufaning.system.service.ProviderService;
-import com.goufaning.system.service.WareHouseService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,9 +28,6 @@ public class PrepareServlet extends HttpServlet {
         List<Provider> providerList = providerService.getAllProvider();
         request.getSession().setAttribute("providerList",providerList);
 
-        WareHouseService wareHouseService = new WareHouseService();
-        List<WareHouse> wareHouseList = wareHouseService.getAllWareHouse();
-        request.getSession().setAttribute("wareHouseList",wareHouseList);
 
         response.sendRedirect(request.getContextPath() + "/InventoryServlet");
     }

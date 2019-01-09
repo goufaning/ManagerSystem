@@ -4,13 +4,13 @@
 }
 body {
     margin: 0 auto;
+    overflow: hidden;
 }
-a:link {
-    text-decoration: none;
+ a,a:link,a:visited,a:hover,a:active{
+    text-decoration: none!important;
+    color:inherit!important;
 }
-.dis
 a:hover {
-    color: black;
     text-decoration: none;
     cursor: hand;
 }
@@ -25,7 +25,6 @@ hr {
     height:1px;
     border:0px;
     border-top:1px solid #3399FF;
-    overflow:hidden;
     margin-left: 5%;
 }
 table {

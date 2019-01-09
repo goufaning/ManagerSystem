@@ -50,8 +50,6 @@ public class OutWarehouseServlet extends HttpServlet {
         outTable.setWorkerId(user.getId());
         ProviderService providerService = new ProviderService();
         outTable.setProviderId(providerService.getByName(providerName).getId());
-        WareHouseService wareHouseService = new WareHouseService();
-        outTable.setWarehouseId(wareHouseService.getByName(warehouse).getId());
         outTable.setDate( new Date(System.currentTimeMillis() ));
         outService.Out(outTable);
         OutDetailService outDetailService = new OutDetailService();

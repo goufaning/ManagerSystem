@@ -1,13 +1,22 @@
-package com.goufaning.system.bean;
+package com.goufaning.system.warehouse.entity;
 
 /**
  * Created by gfn on 2017-01-01.
  */
-public class WareHouse {
+public class Warehouse {
+    /** id*/
     private int id;
+
+    /** 名字*/
     private String name;
+
+    /** 地址 */
     private String address;
+
+    /** 面积 */
     private double area;
+
+    /**  描述 */
     private String description;
 
     public int getId() {

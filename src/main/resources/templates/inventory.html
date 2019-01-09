@@ -1,201 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>$Title$</title>
     <link rel="stylesheet" href="../static/css/main.css" type="text/css" />
     <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css" />
-    <script src="../static/js/jquery-1.11.2.min.js"></script>
-    <script type="text/javascript" src="../static/js/style.js"></script>
-    <script type="text/javascript" src="../static/js/menu.js"></script>
-    <script type="text/javascript" src="../static/js/script.js"></script>
-    <script type="text/javascript" src="../static/bootstrap/js/bootstrap.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#menu1").addClass("select").siblings().removeClass("select");
-        });
-    </script>
-
 </head>
 <body>
-<nav class="navbar navbar-default" role="navigation"> 
-	<div class="container">
-		<div class="container-fluid"> 
-	    <div class="navbar-header"> 
-	        <a class="navbar-brand" href="#">仓库宝</a> 
-	    </div>
-	    <div> 
-		    <ul class="nav navbar-nav navbar-right">
-			    <li class="dropdown">
-			    	<a  href="#" class="dropdown-toggle" data-toggle="dropdown"> 
-			    		<span class="glyphicon glyphicon-user"></span>
-		                <span>欢迎&nbsp;</span> <span>用户名:管理员</span>
-		                <!--小三角-->
-		                <span class="caret"></span>
-		            </a >
-		            <ul class="dropdown-menu">
-		                <li>
-		                    <a href="#"> 
-		                    <span class="glyphicon glyphicon-pencil"></span> &nbsp;&nbsp;修改个人信息
-		                	</a>
-		                </li>
-		                <li>
-		                    <a href="javascript:void(0)">
-		                     <span class="glyphicon glyphicon-off"></span> &nbsp;&nbsp;注销登录
-		                    </a>
-		                </li>
-		            </ul>
-		        </li>
-		    </ul> 
-		</div>
-	</div> 
-	</div>
-</nav>
+<div th:replace="head::.navbar"></div>
 <div class="container">
 	<div class="row">
 		<div class="col-md-3 col-sm-3">
-			<div class="page-sidebar">
-				<ul class="mainmenu">
-					<li>
-						<span class="glyphicon glyphicon-user">   库存管理</span>
-					</li>
-					<ul class="submenu">
-						<div class="expand-triangle"></div>
-						<!--若为普通管理员-->
-						<li><span><a href="#home" data-toggle="tab">库存查询</a></span></li>
-						<!--若为超级管理员-->
-						<li><span><a href="#ios" data-toggle="tab">出入库记录</a></span></li>
-					</ul>
-					<li>
-						<span class="glyphicon glyphicon-envelope">   仓库管理</span>
-						<div class="messages">23</div>
-					</li>
-					<ul class="submenu">
-						<div class="expand-triangle"></div>
-						<li><span>货物入库</span></li>
-						<li><span>货物出库</span></li>
-					</ul>
-					<li>
-						<span class="glyphicon glyphicon-cog">  人员管理</span>
-					</li>
-					<ul class="submenu">
-						<div class="expand-triangle"></div>
-						<li><span>仓库管理员管理</span></li>
-					</ul>
-					<li>
-						<span class="glyphicon glyphicon-lock"> 基础数据</span>
-					</li>
-					<ul class="submenu">
-						<div class="expand-triangle"></div>
-						<li><span>供应商信息管理</span></li>
-						<li><span>客户信息管理</span></li>
-						<li><span>货物信息管理</span></li>
-						<li><span>仓库信息管理</span></li>
-					</ul>
-					<li>
-						<span class="glyphicon glyphicon-lock"> 系统维护</span>
-					</li>
-					<ul class="submenu">
-						<div class="expand-triangle"></div>
-						<li><span>更改密码</a></span></li>
-						<li><span>系统日志</span></li>
-						<li><span>登陆日志</span></li>
-						<li><span>Privacy</span></li>
-						<li><span>Payments</span></li>
-					</ul>
-				</ul>
-    		</div>
+			<!-- 导航栏 -->
+			<div><div th:replace="navbar::.mainmenu"></div></div>
 		</div>
       	<div class="col-md-9 col-sm-9 tab-content">
       		<div id="home" class="tab-pane fade in active">
-      			<div id="a" class="panel panel-default">
-	      			<ol class="breadcrumb">主页</ol>
-		        	<div class="panel-body">
-			            <div class="row" style="margin-top: 100px; margin-bottom: 100px">
-							<div class="col-md-1"></div>
-							<div class="col-md-10" style="text-align: center">
-								<!--库存查询div-->
-								<div class="col-md-4 col-sm-4">
-									<a class="thumbnail shortcut" > 
-										<img src="../static/images/stock_search-512.png" alt="库存查询"
-										class="img-rounded link" style="width: 150px; height: 150px;">
-										<div class="caption">
-											<h3 class="title">库存查询</h3>
-										</div>
-									</a>
-								</div>
-								<!--货物入库div-->
-								<div class="col-md-4 col-sm-4">
-									<a href="javascript:void(0)" class="thumbnail shortcut"> <img
-										src="../static/images/stock_in-512.png" alt="货物入库"
-										class="img-rounded link" style="width: 150px; height: 150px;">
-										<div class="caption">
-											<h3 class="title">货物入库</h3>
-										</div>
-									</a>
-								</div>
-								<!--货物出库div-->
-								<div class="col-md-4 col-sm-4">
-									<a href="javascript:void(0)" class="thumbnail shortcut"> <img
-										src="../static/images/stock_out-512.png" alt="货物出库"
-										class="img-rounded link" style="width: 150px; height: 150px;">
-										<div class="caption">
-											<h3 class="title">货物出库</h3>
-										</div>
-									</a>
-								</div>
-							</div>
-							<div class="col-md-1"></div>
-						</div>
-					</div>
-        		</div>
+				<div th:include="searchWarehouse::#searchWarehouse"></div>
       		</div>
-      		<div class="tab-pane fade" id="ios" style="">
-      			<div id="a" class="panel panel-default">
-	      			<ol class="breadcrumb">修改密码</ol>
-		        	<div class="panel-body">
-			            <div class="row" style="margin-top: 20px; margin-bottom: 20px">
-							<div class="col-md-3"></div>
-							<div class="col-md-6" style="text-align: center">
-								<div class="col-md-1 col-sm-1">
-								</div>
-								<div class="col-md-10 col-sm-10">
-									<form class="form-horizontal" role="form">
-									  <div class="form-group">
-									    <label for="firstname" class="col-sm-4 control-label">用户名</label>
-									    <div class="col-sm-8">
-									      <input type="text" class="form-control" id="firstname" placeholder="请输入名字">
-									    </div>
-									  </div>
-									  <div class="form-group">
-									    <label for="lastname" class="col-sm-4 control-label">输入原密码</label>
-									    <div class="col-sm-8">
-									      <input type="text" class="form-control" id="lastname" placeholder="输入原密码">
-									    </div>
-									  </div>
-									  <div class="form-group">
-									    <label for="lastname" class="col-sm-4 control-label">输入新密码</label>
-									    <div class="col-sm-8">
-									      <input type="text" class="form-control" id="lastname" placeholder="输入新密码">
-									    </div>
-									  </div>
-									  <div class="form-group">
-									    <div class="col-sm-offset-2 col-sm-10">
-									      <button type="submit" class="btn btn-success">确认修改</button>
-									    </div>
-									  </div>
-									</form>
-								</div>
-								<div class="col-md-1 col-sm-1">	
-								</div>
-							</div>
-							<div class="col-md-3"></div>
-						</div>
-					</div>
-        		</div>
+      		<div class="tab-pane fade" id="ios">
+				<div th:replace="modifyPassword::.panel"></div>
       		</div>
     	</div>
     	</div>
     </div>   
 </div>
+<script src="../static/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../static/js/style.js"></script>
+<script type="text/javascript" src="../static/js/menu.js"></script>
+<script type="text/javascript" src="../static/js/script.js"></script>
+<script type="text/javascript" src="../static/bootstrap/js/bootstrap.js"></script>
 </body>
 </html>

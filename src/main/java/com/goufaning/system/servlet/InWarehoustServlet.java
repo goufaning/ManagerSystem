@@ -52,8 +52,6 @@ public class InWarehoustServlet extends HttpServlet {
         inTable.setWorkerId(user.getId());
         ProviderService providerService = new ProviderService();
         inTable.setProviderId(providerService.getByName(providerName).getId());
-        WareHouseService wareHouseService = new WareHouseService();
-        inTable.setWarehouseId(wareHouseService.getByName(warehouse).getId());
         inTable.setDate(new Date(System.currentTimeMillis()));
         inService.In(inTable);
         InDetailService inDetailService = new InDetailService();
