@@ -1,6 +1,6 @@
 package com.goufaning.system.dao;
 
-import com.goufaning.system.bean.Product;
+import com.goufaning.system.product.entity.Product;
 import com.goufaning.system.utils.JDBCUtils;
 
 import java.sql.Connection;

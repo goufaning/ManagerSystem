@@ -1,4 +1,4 @@
-package com.goufaning.system.bean;
+package com.goufaning.system.product.entity;
 
 /**
  * Created by gfn on 2017-01-01.

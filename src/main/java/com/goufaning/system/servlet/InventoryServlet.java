@@ -1,7 +1,8 @@
 package com.goufaning.system.servlet;
 
-import com.goufaning.system.bean.*;
-import com.goufaning.system.service.*;
+import com.goufaning.system.bean.Provider;
+import com.goufaning.system.product.entity.Product;
+import com.goufaning.system.service.ProviderService;
 import com.goufaning.system.user.entity.User;
 import com.goufaning.system.warehouse.entity.Warehouse;
 
@@ -12,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -21,8 +21,6 @@ import java.util.Map;
 @WebServlet(name = "InventoryServlet")
 public class InventoryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        InventoryService inventoryService = new InventoryService();
-        List<Inventory> inventoryList = inventoryService.getAllInventory();
         Map<Integer,Product> map = new HashMap<>();
         Map<Integer,Warehouse> map2 = new HashMap<>();
         Map<Integer,Provider> map3 = new HashMap<>();
@@ -31,7 +29,6 @@ public class InventoryServlet extends HttpServlet {
             map3.put(provider.getId(),provider);
         }
         Map<Integer,User> map4 = new HashMap<>();
-        request.getSession().setAttribute("inventoryList",inventoryList);
         request.getSession().setAttribute("productmap",map);
         request.getSession().setAttribute("warehousemap",map2);
         request.getSession().setAttribute("usermap",map4);

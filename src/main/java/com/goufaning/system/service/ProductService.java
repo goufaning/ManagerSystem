@@ -1,6 +1,6 @@
 package com.goufaning.system.service;
 
-import com.goufaning.system.bean.Product;
+import com.goufaning.system.product.entity.Product;
 import com.goufaning.system.dao.ProductDao;
 
 import java.util.List;

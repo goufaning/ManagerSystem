@@ -1,4 +1,4 @@
-package com.goufaning.system.bean;
+package com.goufaning.system.product.entity;
 
 import java.util.Date;
 

@@ -47,13 +47,13 @@
 
         <div class="row" style="margin-top: 25px">
             <div class="col-md-5">
-                <button class="btn btn-sm btn-default" id="add_storage" data-toggle="modal" data-target="#add_modal">
+                <button class="btn btn-sm btn-default" id="add_storage">
                     <span class="glyphicon glyphicon-plus"></span> <span>添加库存信息</span>
                 </button>
-                <button class="btn btn-sm btn-default" id="import_storage" data-toggle="modal" data-target="#import_modal">
+                <button class="btn btn-sm btn-default" id="import_storage">
                     <span class="glyphicon glyphicon-import"></span> <span>导入</span>
                 </button>
-                <button class="btn btn-sm btn-default" id="export_storage" data-toggle="modal" data-target="#export_modal">
+                <button class="btn btn-sm btn-default" id="export_storage">
                     <span class="glyphicon glyphicon-export"></span> <span>导出</span>
                 </button>
             </div>
@@ -77,7 +77,7 @@
             <div class="modal-header">
                 <button class="close" type="button" data-dismiss="modal"
                         aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">添加库存记录</h4>
+                <h4 class="modal-title">添加库存记录</h4>
             </div>
             <div class="modal-body">
                 <!-- 添加库存信息模态框的内容 -->
@@ -87,7 +87,7 @@
                         <form class="form-horizontal" role="form" id="storage_form"
                               style="margin-top: 25px">
                             <div class="form-group">
-                                <label for="" class="control-label col-md-4 col-sm-4"> <span>货物ID：</span>
+                                <label for="storage_goodsID" class="control-label col-md-4 col-sm-4"> <span>货物ID：</span>
                                 </label>
                                 <div class="col-md-8 col-sm-8">
                                     <input type="text" class="form-control" id="storage_goodsID"
@@ -95,7 +95,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="" class="control-label col-md-4 col-sm-4"> <span>仓库ID：</span>
+                                <label for="storage_repositoryID" class="control-label col-md-4 col-sm-4"> <span>仓库ID：</span>
                                 </label>
                                 <div class="col-md-8 col-sm-8">
                                     <input type="text" class="form-control" id="storage_repositoryID"
@@ -103,7 +103,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="" class="control-label col-md-4 col-sm-4"> <span>数量：</span>
+                                <label for="storage_number" class="control-label col-md-4 col-sm-4"> <span>数量：</span>
                                 </label>
                                 <div class="col-md-8 col-sm-8">
                                     <input type="text" class="form-control" id="storage_number"
@@ -297,18 +297,18 @@
             <div class="modal-header">
                 <button class="close" type="button" data-dismiss="modal"
                         aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">信息</h4>
+                <h4 class="modal-title">信息</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-4 col-sm-4"></div>
                     <div class="col-md-4 col-sm-4">
                         <div id="info_success" class=" hide" style="text-align: center;">
-                            <img src="media/icons/success-icon.png" alt=""
+                            <img src="images/success-icon.png" alt=""
                                  style="width: 100px; height: 100px;">
                         </div>
                         <div id="info_error" style="text-align: center;">
-                            <img src="media/icons/error-icon.png" alt=""
+                            <img src="images/error-icon.png" alt=""
                                  style="width: 100px; height: 100px;">
                         </div>
                     </div>
@@ -339,12 +339,12 @@
             <div class="modal-header">
                 <button class="close" type="button" data-dismiss="modal"
                         aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">警告</h4>
+                <h4 class="modal-title">警告</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-3 col-sm-3" style="text-align: center;">
-                        <img src="media/icons/warning-icon.png" alt=""
+                        <img src="images/warning-icon.png" alt=""
                              style="width: 70px; height: 70px; margin-top: 20px;">
                     </div>
                     <div class="col-md-8 col-sm-8">
@@ -421,5 +421,7 @@
         </div>
     </div>
 </div>
+
+
 </body>
 </html>

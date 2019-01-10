@@ -24,7 +24,7 @@ $(function() {
     optionAction();
     searchAction();
     storageListInit();
-    // bootstrapValidatorInit();
+    bootstrapValidatorInit();
     repositoryOptionInit();
     addStorageAction();
     editStorageAction();
@@ -106,34 +106,34 @@ function storageListInit() {
             {
                 columns : [
                     {
-                        field : 'goodsID',
+                        field : 'id',
                         title : '货物ID'
                         //sortable: true
                     },
                     {
-                        field : 'goodsName',
+                        field : 'id',
                         title : '货物名称'
                     },
                     {
-                        field : 'goodsType',
+                        field : 'id',
                         title : '货物类型'
                     },
                     {
-                        field : 'goodsSize',
+                        field : 'id',
                         title : '货物尺寸',
                         visible : false
                     },
                     {
-                        field : 'goodsValue',
+                        field : 'id',
                         title : '货物价值',
                         visible : false
                     },
                     {
-                        field : 'repositoryID',
+                        field : 'id',
                         title : '仓库ID'
                     },
                     {
-                        field : 'number',
+                        field : 'id',
                         title : '库存数量'
                     },
                     {
@@ -154,17 +154,17 @@ function storageListInit() {
                             },
                             'click .delete' : function(e,
                                                        value, row, index) {
-                                select_goodsID = row.goodsID;
-                                select_repositoryID = row.repositoryID
+                                select_goodsID = row.id;
+                                select_repositoryID = row.id
                                 $('#deleteWarning_modal').modal(
                                     'show');
                             }
                         }
                     } ],
-                url : 'storageManage/getStorageListWithRepository',
-                method : 'GET',
+                url : '/inventory/list',
+                method : 'post',
                 queryParams : queryParams,
-                sidePagination : "server",
+                // sidePagination : "server",
                 dataType : 'json',
                 pagination : true,
                 pageNumber : 1,
@@ -313,9 +313,9 @@ function addStorageAction() {
         // ajax
         $.ajax({
             type : "POST",
-            url : "storageManage/addStorageRecord",
+            url : "/inventory/add",
             dataType : "json",
-            contentType : "application/json",
+            contentType:"application/json",
             data : JSON.stringify(data),
             success : function(response) {
                 $('#add_modal').modal("hide");
