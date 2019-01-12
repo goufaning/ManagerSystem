@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css" />
 	<link rel="stylesheet" href="../static/bootstrap/css/bootstrap-table.css" />
 	<link rel="stylesheet" href="../static/bootstrap/css/bootstrapValidator.min.css" />
+	<script src="../static/js/jquery-1.11.2.min.js"></script>
 </head>
 <body>
 <div th:replace="head::.navbar"></div>
@@ -15,12 +16,15 @@
 			<!-- 导航栏 -->
 			<div><div th:replace="navbar::.mainmenu"></div></div>
 		</div>
-      	<div class="col-md-9 col-sm-9 tab-content">
-      		<div id="home" class="tab-pane fade in active">
-				<div th:include="searchWarehouse::#searchWarehouse"></div>
+      	<div id="main123456" class="col-md-9 col-sm-9 tab-content">
+      		<div id="home" class="tab-pane fade">
+				<!--<div th:include="searchWarehouse::#searchWarehouse"></div>-->
       		</div>
+			<div class="" id="goodsManager">
+				<div th:replace="goodsManager::#goods"></div>
+			</div>
       		<div class="tab-pane fade" id="ios">
-				<div th:replace="modifyPassword::.panel"></div>
+				<!--<div th:replace="modifyPassword::.panel"></div>-->
       		</div>
     	</div>
     	</div>
@@ -29,10 +33,10 @@
 <script src="../static/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="../static/js/style.js"></script>
 <script type="text/javascript" src="../static/js/menu.js"></script>
-<script type="text/javascript" src="../static/js/script.js"></script>
 <script type="text/javascript" src="../static/bootstrap/js/bootstrap.js"></script>
 <script type="text/javascript" src="../static/bootstrap/js/bootstrap-table.min.js"></script>
 <script type="text/javascript" src="../static/bootstrap/js/bootstrap-table-zh-CN.min.js"></script>
 <script type="text/javascript" src="../static/bootstrap/js/bootstrapValidator.min.js"></script>
+<script type="text/javascript" src="../static/js/script.js"></script>
 </body>
 </html>
