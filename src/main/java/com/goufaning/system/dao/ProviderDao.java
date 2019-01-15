@@ -1,7 +1,7 @@
 package com.goufaning.system.dao;
 
 import com.goufaning.system.bean.Provider;
-import com.goufaning.system.utils.JDBCUtils;
+import com.goufaning.system.util.JDBCUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -1,6 +1,6 @@
 package com.goufaning.system;
 
-import com.goufaning.system.user.service.IUserService;
+import com.goufaning.system.service.IUserService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

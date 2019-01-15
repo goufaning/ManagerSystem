@@ -2,7 +2,7 @@ package com.goufaning.system.dao;
 
 import com.goufaning.system.bean.InBaobiaoSum;
 import com.goufaning.system.bean.OutBaobiaoSum;
-import com.goufaning.system.utils.JDBCUtils;
+import com.goufaning.system.util.JDBCUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

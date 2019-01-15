@@ -1,6 +1,6 @@
 package com.goufaning.system.servlet;
 
-import com.goufaning.system.product.entity.Product;
+import com.goufaning.system.entity.Product;
 import com.goufaning.system.bean.Provider;
 import com.goufaning.system.service.ProductService;
 import com.goufaning.system.service.ProviderService;

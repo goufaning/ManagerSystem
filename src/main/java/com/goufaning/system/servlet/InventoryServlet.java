@@ -1,10 +1,10 @@
 package com.goufaning.system.servlet;
 
 import com.goufaning.system.bean.Provider;
-import com.goufaning.system.product.entity.Product;
+import com.goufaning.system.entity.Product;
 import com.goufaning.system.service.ProviderService;
-import com.goufaning.system.user.entity.User;
-import com.goufaning.system.warehouse.entity.Warehouse;
+import com.goufaning.system.entity.User;
+import com.goufaning.system.entity.Warehouse;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
