@@ -19,6 +19,12 @@ public class Warehouse {
     /**  描述 */
     private String description;
 
+    private String status;
+
+    private int adminId;
+
+    private String adminName;
+
     public int getId() {
         return id;
     }
@@ -57,5 +63,29 @@ public class Warehouse {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public int getAdminId() {
+        return adminId;
+    }
+
+    public void setAdminId(int adminId) {
+        this.adminId = adminId;
+    }
+
+    public String getAdminName() {
+        return adminName;
+    }
+
+    public void setAdminName(String adminName) {
+        this.adminName = adminName;
     }
 }

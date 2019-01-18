@@ -7,7 +7,7 @@ $(document).ready( function() {
 function pageInit() {
     var $submenuli = $('.submenu li');
     $submenuli.first().addClass('chosen');
-    $('#main').load("page/goodsManager");
+    $('#main').load("page/warehouseManager");
 }
 
 function menuClickAction() {

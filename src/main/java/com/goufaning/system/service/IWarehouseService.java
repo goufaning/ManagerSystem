@@ -2,13 +2,23 @@ package com.goufaning.system.service;
 
 import com.goufaning.system.entity.Warehouse;
 
-import java.util.List;
+import java.util.Map;
 
 public interface IWarehouseService {
 
-    List<Warehouse> getAllWareHouse();
+    Map<String, Object> getAllWarehouse();
 
-    Warehouse getByName(String name);
+    Map<String, Object> getAllWarehouse(int offset, int limit);
 
-    Warehouse findById(int id);
+    Map<String, Object> selectByAddress(String address);
+
+    Map<String, Object> selectByAddress(int offset, int limit, String address);
+
+    Map<String, Object> findById(int id);
+
+    boolean addWarehouse(Warehouse warehouse);
+
+    boolean updateWarehouse(Warehouse warehouse);
+
+    boolean deleteWarehouse(int id);
 }
