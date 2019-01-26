@@ -1,66 +1,58 @@
 package com.goufaning.warehouse.app.controller;
 
+import com.goufaning.core.mvc.result.PageResultBean;
 import com.goufaning.warehouse.app.entity.Warehouse;
-import com.goufaning.warehouse.app.service.IWarehouseService;
-import com.goufaning.warehouse.app.util.Result;
-import com.goufaning.warehouse.app.util.ResultUtil;
+import com.goufaning.warehouse.app.service.WarehouseService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Map;
 
+@RequestMapping("/warehouse")
 @RestController
 public class WarehouseController {
     @Autowired
-    private IWarehouseService warehouseService;
+    private WarehouseService warehouseService;
 
     private static final String SEARCH_BY_ID = "searchByID";
     private static final String SEARCH_BY_ADDRESS = "searchByAddress";
     private static final String SEARCH_ALL = "searchAll";
 
-    @RequestMapping("/warehouse/list")
-    public Map<String, Object> getAllWarehouseList(@RequestParam("searchType") String searchType,
-                                                   @RequestParam("offset") int offset, @RequestParam("limit") int limit,
-                                                   @RequestParam("keyWord") String keyWord) {
-        Result result = ResultUtil.newResult();
+    @GetMapping("/all")
+    public PageResultBean<List<Warehouse>> getAllWarehouseList(String searchType, int offset,  int limit, String keyWord) {
         List<Warehouse> rows = null;
         long total = 0;
-        Map<String, Object> queryResult = query(searchType, keyWord, offset, limit);
-
-        if (queryResult != null) {
-            rows = (List<Warehouse>) queryResult.get("data");
-            total = (long) queryResult.get("total");
+        rows = query(searchType, keyWord, offset, limit);
+        if (rows != null) {
+            total = rows.size();
         }
-
-        // 设置 Response
-        result.setCustomerInfo("rows", rows);
-        result.setResponseTotal(total);
-        return result.getResultMap();
+        return new PageResultBean<List<Warehouse>>(rows, total);
     }
 
-    private Map<String, Object> query(String searchType, String keyword, int offset, int limit) {
+    private List<Warehouse> query(String searchType, String keyword, int offset, int limit) {
         Map<String, Object> queryResult = null;
+        List<Warehouse> warehouseList = null;
         switch (searchType) {
             case SEARCH_BY_ID:
                 if (StringUtils.isNumeric(keyword)) {
-                    queryResult = warehouseService.findById(Integer.valueOf(keyword));
+                    warehouseList = warehouseService.findById(Integer.valueOf(keyword));
                 }
                 break;
             case SEARCH_BY_ADDRESS:
-                queryResult = warehouseService.selectByAddress(offset, limit, keyword);
+                warehouseList = warehouseService.selectByAddress(offset, limit, keyword);
                 break;
             case SEARCH_ALL:
-                queryResult = warehouseService.getAllWarehouse(offset, limit);
+                warehouseList = warehouseService.getAllWarehouse(offset, limit);
                 break;
             default:
                 // do other thing
                 break;
         }
-        return queryResult;
+        return warehouseList;
     }
 
 

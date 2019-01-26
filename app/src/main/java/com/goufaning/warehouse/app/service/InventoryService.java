@@ -9,17 +9,15 @@ import java.util.Date;
 import java.util.List;
 
 @Service
-public class InventoryService implements IInventoryService {
+public class InventoryService {
 
     @Autowired
     private InventoryMapper mapper;
 
-    @Override
     public List<Inventory> getAllProductInventory() {
         return mapper.findAll();
     }
 
-    @Override
     public void addProduct(int productId, int num, int warehouseId) {
         mapper.add(productId, num, warehouseId, new Date());
     }

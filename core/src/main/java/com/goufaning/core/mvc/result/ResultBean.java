@@ -17,7 +17,7 @@ public class ResultBean<T> implements Serializable {
     /**
      * 返回的信息(主要出错的时候使用)
      */
-    private String msg = "success";
+    protected String msg = "success";
 
     /**
      * 接口返回码, 0表示成功, 其他看对应的定义
@@ -26,7 +26,7 @@ public class ResultBean<T> implements Serializable {
      * >0 : 表示已知的异常(例如提示错误等, 需要调用地方单独处理)
      * <0 : 表示未知的异常(不需要单独处理, 调用方统一处理)
      */
-    private int code = SUCCESS;
+    protected int code = SUCCESS;
 
     /**
      * 返回的数据
@@ -46,5 +46,29 @@ public class ResultBean<T> implements Serializable {
         super();
         this.msg = e.toString();
         this.code = FAIL ;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
     }
 }

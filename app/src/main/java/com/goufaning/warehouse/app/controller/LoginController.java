@@ -2,7 +2,7 @@ package com.goufaning.warehouse.app.controller;
 
 
 import com.goufaning.warehouse.app.entity.User;
-import com.goufaning.warehouse.app.service.UserServiceImpl;
+import com.goufaning.warehouse.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,8 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class LoginController {
+
     @Autowired
-    private UserServiceImpl userService;
+    private UserService userService;
 
     @RequestMapping("/login")
     ModelAndView loginPage(HttpServletRequest request) {

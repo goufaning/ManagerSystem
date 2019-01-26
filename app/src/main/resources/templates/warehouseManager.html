@@ -109,15 +109,16 @@
                                 }
                             }
                         } ],
-                    url : 'warehouse/list',
+                    url : 'warehouse/all',
                     method : 'GET',
+                    striped : true, //是否显示行间隔色
                     queryParams : queryParams,
                     sidePagination : "server",
                     dataType : 'json',
                     pagination : true,
                     pageNumber : 1,
                     pageSize : 5,
-                    pageList : [ 5, 10, 25, 50, 100 ],
+                    pageList : [ 5 ],
                     clickToSelect : true
                 });
     }

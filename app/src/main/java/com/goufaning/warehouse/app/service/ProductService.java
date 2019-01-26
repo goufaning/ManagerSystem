@@ -13,17 +13,15 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class ProductService implements IProductService{
+public class ProductService {
 
     @Autowired
     private ProductMapper productMapper;
 
-    @Override
     public List<Product> getAllProduct() {
         return productMapper.findAll();
     }
 
-    @Override
     public Map<String, Object> selectById(int id) {
         Map<String, Object> resultSet = new HashMap<>();
         List<Product> productList = new ArrayList<>();
@@ -38,7 +36,6 @@ public class ProductService implements IProductService{
         return resultSet;
     }
 
-    @Override
     public Map<String, Object> selectByName(int offset, int limit, String name) {
         Map<String, Object> resultSet = new HashMap<>();
         List<Product> productList;
@@ -66,7 +63,6 @@ public class ProductService implements IProductService{
         return resultSet;
     }
 
-    @Override
     public boolean addProduct(Product product) {
         if (product != null) {
             productMapper.insert(product);
@@ -75,7 +71,6 @@ public class ProductService implements IProductService{
         return false;
     }
 
-    @Override
     public boolean updateProduct(Product product) {
         if (product != null) {
             productMapper.update(product.getId(), product.getName(), product.getType(), product.getSize(), product.getPrice(), product.getDescription());
@@ -84,7 +79,6 @@ public class ProductService implements IProductService{
         return false;
     }
 
-    @Override
     public boolean deleteProduct(int productId) {
         productMapper.deleteById(productId);
         return true;
@@ -94,7 +88,6 @@ public class ProductService implements IProductService{
         return selectByName(-1, -1, name);
     }
 
-    @Override
     public Map<String, Object> selectAll(int offset, int limit) {
         // 初始化结果集
         Map<String, Object> resultSet = new HashMap<>();
@@ -125,7 +118,6 @@ public class ProductService implements IProductService{
         return resultSet;
     }
 
-    @Override
     public Map<String, Object> selectAll() {
         return selectAll(-1, -1);
     }

@@ -9,25 +9,22 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 
 @Service
-public class UserServiceImpl implements IUserService {
+public class UserService {
 
-    private Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+    private Logger logger = LoggerFactory.getLogger(UserService.class);
 
     @Resource
     private UserMapper userMapper;
 
 
-    @Override
     public void create(String name, String password, int permissions, String description) {
         userMapper.insert(name, password, permissions, description);
     }
 
-    @Override
     public Integer getAllUsers() {
         return userMapper.getAll().size();
     }
 
-    @Override
     public User getUserByNameAndPassword(String name, String password) {
         return userMapper.findUserByNameAndPassword(name, password);
     }

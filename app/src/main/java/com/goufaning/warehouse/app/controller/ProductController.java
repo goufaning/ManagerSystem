@@ -2,8 +2,8 @@ package com.goufaning.warehouse.app.controller;
 
 import com.goufaning.warehouse.app.entity.Inventory;
 import com.goufaning.warehouse.app.entity.Product;
-import com.goufaning.warehouse.app.service.IInventoryService;
-import com.goufaning.warehouse.app.service.IProductService;
+import com.goufaning.warehouse.app.service.InventoryService;
+import com.goufaning.warehouse.app.service.ProductService;
 import com.goufaning.warehouse.app.util.Result;
 import com.goufaning.warehouse.app.util.ResultUtil;
 import org.apache.commons.lang.StringUtils;
@@ -26,10 +26,10 @@ public class ProductController {
     private static final String SEARCH_ALL = "searchAll";
 
     @Autowired
-    private IProductService productService;
+    private ProductService productService;
 
     @Autowired
-    private IInventoryService inventoryService;
+    private InventoryService inventoryService;
 
     private Map<String, Object> query(String searchType, String keyWord, int offset, int limit) {
         Map<String, Object> queryResult = null;
