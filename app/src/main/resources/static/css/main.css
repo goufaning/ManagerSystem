@@ -8,7 +8,6 @@ body {
 }
  a,a:link,a:visited,a:hover,a:active{
     text-decoration: none!important;
-    color:inherit!important;
 }
 a:hover {
     text-decoration: none;
@@ -18,216 +17,7 @@ ul,li {
     list-style-type:none;
 }
 
-hr {
-    width: 90%;
-    text-align: center;
-    color:#3399FF;
-    height:1px;
-    border:0px;
-    border-top:1px solid #3399FF;
-    margin-left: 5%;
-}
-table {
-    text-align: center;
-    width: 90%;
-    margin: 10px auto;
-    border:0;
-}
-tr,td {
-    border-bottom: 1px solid #E5E5E5;
-    padding: 0;
-}
-thead {
-    width: 50px;
-    line-height: 40px;
-}
 
-#head {
-    height: 40px;
-    width: 100%;
-    background-color: #3E3E3E;
-}
-#head p {
-    display: block;height: 40px;line-height: 40px;margin-left: 20px;color: white;font-size: 16px;
-}
-
-.work_area {
-    width: 100%;height: 590px;text-align: center;
-}
-#work {
-    width: 100%;height: 180px;
-}
-.work {
-    height: 90px;
-    text-align: left;
-    margin-left: 10%;
-    line-height: 90px;
-}
-.work select {
-    width: 150px;
-}
-#tab input{
-    width: 100px;
-    height: 25px;
-}
-#option {
-    float: left;
-    background-color: #E0E9F6;
-}
-.option {
-    display: block;
-    width: 100%;
-    height: 40px;
-}
-
-.title {
-    display: block;
-    padding-top: 20px;
-    height: 30px;
-    text-align: center;
-}
-
-.div_rigth {
-    background-color: whitesmoke;
-    text-align: center ;
-}
-#jcSide {
-    background: #E0E9F6;width:180px;
-    border-right: 1px solid #e5e5e5;
-    font-size: 14px;color: #5C5D5F;   }
-#jcSide li { height:40px;}
-#jcSide p {
-    display: block;height: 40px;line-height: 40px;margin-left: 8px;
-}
-#jcSide li a {  color: #5C5D5F; padding-left:10px;display: block;
-    cursor:pointer;  line-height:40px;  height:40px; margin: 0 }
-#jcSide li span {margin-left: 8px;
-   }
-#jcSide li a:hover { background-color:#F49484;color: white }
-#jcSide li.select a { background-color:#E78170;color: white }
-#login {
-    width: 1280px;
-    height: 500px;
-    padding-top: 200px;
-    text-align: center;
-}
-.main_form input {
-    text-align: center;
-}
-.input_text {
-    border:0;
-    ime-mode: disabled;
-    background-color: #F5F5F5;
-}
-.mybtn {
-    width:86px;
-    text-align:center;
-    line-height:100%;
-    padding-top:0.5em;
-    padding-right:2em;
-    padding-bottom:0.55em;
-    padding-left:2em;
-    font-size:14px;
-    font-style:normal;
-    font-variant:normal;
-    font-weight:normal;
-    text-decoration:none;
-    margin-top:0px;
-    margin-right:2px;
-    margin-bottom:0px;
-    margin-left:2px;
-    vertical-align:text-bottom;
-    display:inline-block;
-    cursor:pointer;
-    zoom:1;
-    outline-width:medium;
-    outline-color:invert;
-    font-size-adjust:none;
-    font-stretch:normal;
-    border-top-left-radius:0.5em;
-    border-top-right-radius:0.5em;
-    border-bottom-left-radius:0.5em;
-    border-bottom-right-radius:0.5em;
-    box-shadow:0px 1px 2px rgba(0,0,0,0.2);
-    text-shadow:0px 1px 1px rgba(0,0,0,0.3);
-    color:#fefee9;
-    border-top-color:#da7c0c;
-    border-right-color:#da7c0c;
-    border-bottom-color:#da7c0c;
-    border-left-color:#da7c0c;
-    border-top-width:1px;
-    border-right-width:1px;
-    border-bottom-width:1px;
-    border-left-width:1px;
-    border-top-style:solid;
-    border-right-style:solid;
-    border-bottom-style:solid;
-    border-left-style:solid;
-    background-image:none;
-    background-attachment:scroll;
-    background-repeat:repeat;
-    background-position-x:0%;
-    background-position-y:0%;
-    background-size:auto;
-    background-origin:padding-box;
-    background-clip:padding-box;
-    background-color:#f78d1d;
-    margin-left: 600px;
-    margin-top: 30px;
-}
-.mybtn:hover {
-    background: #f47c20;
-}
-.menu {
-    padding-left: 160px;
-    padding-top: 150px;
-    width: 90%;height: 440px;text-align: center;
-}
-.menu a {
-    display: block;
-    margin-left: 100px;
-    width: 130px;
-    height: 180px;
-    float: left;
-}
-.menu img {
-    width: 120px;
-    height: 120px;
-    margin-top: 10px;
-}
-.menu span {
-    font-size: 12px;
-    margin-top: 15px;
-    display: block;
-    color: #666666;
-}
-.back {
-    display: block;
-    float: left;
-    font-size: 14px;
-    color: #3399FF;!important;
-    margin-left: 60px;
-}
-.title span {
-    display: block;
-    float: left;
-    margin-left: 420px;
-}
-.in_out {
-    position: absolute;
-    top: 20px;
-    left: 180px;
-    width: 900px;
-    height: 600px;
-    background-color: #FDFDFD;
-    z-index: 2000;
-    display: none;
-}
-.tab{
-    width:100%;
-
-
-}
 
 .tab_menu li{
     color: black;
@@ -322,34 +112,56 @@ li {
     cursor: pointer;
 }
 /*------------ Main Menu ------------*/
+.navbar-side {
+    border:none;
+    background-color: #283643;
+}
+
+#page-wrapper{
+    margin: 0 0 0 260px;
+    padding: 15px 30px;
+
+    min-height: 1200px;
+
+}
+
+
+.navbar-side {
+    z-index: 1;
+    width: 260px;
+}
+
+.navbar {
+    border-radius: 0px;
+}
+
 .mainmenu {
-    font-size: 16px;
+    font-size: 14px;
     position:relative;
     padding:0;
 }
 
+i {
+    color: #1cc09f;
+}
+
 .mainmenu > li {
-    background-color: #e4644b;
-    border-top: 1px solid #d05942;
-    height: 48px;
-    color: #f7f1e3;
+    background-color: rgb(40, 54, 67);
+    padding: 10px 15px;
+    height: 45px;
+    color: #B5B5B5;
     box-sizing: border-box;
     position:relative;
-    padding:0 0 0 20px;
 }
 
 .mainmenu > li:first-child {
-    border-radius: 7px 7px 0 0;
     border-top: 0;
 }
 
-.mainmenu > li:last-child {
-    border-radius: 0 0 7px 7px;
-}
 
-.mainmenu > li span {
+.mainmenu > li a {
     display:block;
-    line-height: 48px;
+    line-height: 45px;
 }
 
 .mainmenu > li .icon {
@@ -360,20 +172,6 @@ li {
     position:absolute;
     left:10px;
     top:15px;
-}
-
-.mainmenu > li .messages {
-    background: url("../images/messages.png") no-repeat;
-    padding: 0;
-    margin-top: -33px;
-    margin-right: 19px;
-    float: right;
-    display: block;
-    width: 34px;
-    height: 18px;
-    text-align: center;
-    font-size: 11px;
-    line-height: 19px;
 }
 
 .expand-triangle {
@@ -393,7 +191,7 @@ li {
 
 .submenu li {
     line-height: 20px;
-    height: 35px;
+    height: 40px;
     padding-top: 11px;
     background-color: #484141;
     border-left: solid 6px #484141;

@@ -1,0 +1,146 @@
+
+ #wrapper {
+    width: 100%;
+    background: #283643;
+}
+
+#page-wrapper {
+    padding: 15px 15px;
+    min-height: 600px;
+    background: #f3f3f3;
+}
+#page-inner {
+    width:100%;
+    margin:10px 20px 10px 0px;
+    background-color:transparent;
+    padding:10px;
+    min-height:1200px;
+}
+
+.text-center {
+    text-align:center;
+}
+
+
+.navbar-side {
+  z-index: 1;
+  position: fixed;
+  width: 260px;
+  top: 80px;
+}
+
+
+/*----------------------------------------------
+   DASHBOARD STYLES
+------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+     /*CHAT PANEL*/
+
+/*----------------------------------------------
+    MENU STYLES
+------------------------------------------------*/
+
+
+
+.top-navbar{
+margin:0px;
+    border: 0px;
+}
+.top-navbar .navbar-brand {
+color: #fff;
+width: 260px;
+text-align: left;
+height: 60px;
+font-size: 24px;
+font-weight: 700;
+text-transform: uppercase;
+line-height: 30px;
+background: #283643;
+}
+.navbar-brand b{
+color: #4BD28C;
+}
+.top-navbar .nav > li {
+position: relative;
+display: inline-block;
+margin: 0px;
+padding: 0px;
+}
+.top-navbar .nav > li > a {
+position: relative;
+display: block;
+padding: 20px;
+color: #FFFFFF;
+margin: 0px;
+}
+.top-navbar .nav > li > a:hover, .top-navbar .nav > li > a:focus {
+text-decoration: none;
+color: #319DB5 !important;
+background: transparent;
+}
+.top-navbar .dropdown-menu{
+min-width: 230px;
+border-radius: 0 0 4px 4px;
+}
+
+.top-navbar {
+	background: #1cc09f;
+	border-bottom:none;
+}
+.top-navbar .nav > li > a > i {
+margin-right: 2px;
+}
+.top-navbar .navbar-brand:hover {
+    color: #1CC09F;
+    background-color: rgb(43, 46, 51);
+}
+.dropdown-user li {
+    margin: 8px 0;
+}
+
+.navbar-header {
+    background: transparent;
+}
+
+.navbar-default .navbar-toggle {
+border-color: #fff;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+background-color: #FFF;
+}
+.nav > li > a > i {
+    margin-right:10px;
+    color: #FFF;
+}
+
+#page-wrapper{
+    margin: 0 0 0 260px;
+    padding: 15px 30px;
+
+    min-height: 1200px;
+
+}
+
+
+.navbar-side {
+    z-index: 1;
+    width: 260px;
+}
+
+.navbar {
+    border-radius: 0px;
+}
+
+
+
