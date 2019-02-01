@@ -9,6 +9,8 @@
     <classPathEntry location="C:\Users\goufn\.m2\repository\mysql\mysql-connector-java\5.1.47\mysql-connector-java-5.1.47.jar" />
 
     <context id="Tables" targetRuntime="MyBatis3">
+        <!--避免生成重复代码的插件-->
+        <plugin type="com.goufaning.core.util.OverIsMergeablePlugin"/>
 
         <!-- 注释 -->
         <commentGenerator>
@@ -48,7 +50,7 @@
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
-        <!-- 生成mapper xml对应Client-->
+        <!--生成mapper类存放位置-->
         <javaClientGenerator targetPackage="com.goufaning.warehouse.app.mapper" targetProject="src/main/java" type="XMLMAPPER">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false" />

@@ -15,8 +15,8 @@ public class PageController {
         return new ModelAndView(page);
     }
 
-    @RequestMapping("/old")
+    @RequestMapping("/main")
     public ModelAndView mainView(HttpServletRequest request) {
-        return new ModelAndView("inventory");
+        return new ModelAndView("main");
     }
 }

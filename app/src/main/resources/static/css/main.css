@@ -152,6 +152,7 @@ i {
     color: #B5B5B5;
     box-sizing: border-box;
     position:relative;
+    border-bottom: 1px solid rgba(107, 108, 109, 0.19);
 }
 
 .mainmenu > li:first-child {
