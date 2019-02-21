@@ -9,8 +9,6 @@
     <classPathEntry location="C:\Users\goufn\.m2\repository\mysql\mysql-connector-java\5.1.47\mysql-connector-java-5.1.47.jar" />
 
     <context id="Tables" targetRuntime="MyBatis3">
-        <!--避免生成重复代码的插件-->
-        <plugin type="com.goufaning.core.util.OverIsMergeablePlugin"/>
 
         <!-- 注释 -->
         <commentGenerator>
@@ -37,7 +35,7 @@
         </javaTypeResolver>
 
         <!-- 生成实体类地址 -->
-        <javaModelGenerator targetPackage="com.goufaning.warehouse.app.entity" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.goufaning.warehouse.app.domain" targetProject="src/main/java">
             <!-- 从数据库返回的值被清理前后的空格 -->
             <property name="trimStrings" value="true" />
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
@@ -66,7 +64,25 @@
             enableSelectByExample:Select多条语句中加入where条件查询，默认为true开启
             selectByExampleQueryId:Select单个对象语句中加入where条件查询，默认为true开启
         -->
-        <table tableName="record_in_332" domainObjectName="RecordIn" enableCountByExample="false"
+        <table tableName="user" domainObjectName="User" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
+               selectByExampleQueryId="false">
+            <!-- 使用数据库中实际的字段名作为生成的实体类的属性 -->
+            <property name="useActualColumnNames" value="true"/>
+            <!-- 使用自增长键 -->
+            <property name="my.isgen.usekeys" value="true"/>
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="article" domainObjectName="Article" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
+               selectByExampleQueryId="false">
+            <!-- 使用数据库中实际的字段名作为生成的实体类的属性 -->
+            <property name="useActualColumnNames" value="true"/>
+            <!-- 使用自增长键 -->
+            <property name="my.isgen.usekeys" value="true"/>
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="article_category_ref" domainObjectName="ArticleCategoryRef" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
                selectByExampleQueryId="false">
             <!-- 使用数据库中实际的字段名作为生成的实体类的属性 -->

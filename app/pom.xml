@@ -12,7 +12,7 @@
 	<artifactId>app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>app</name>
-	<description>warehouse manager</description>
+	<description>blog</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

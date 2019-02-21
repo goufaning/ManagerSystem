@@ -1,24 +1,79 @@
 package com.goufaning.warehouse.app.mapper;
 
-import com.goufaning.warehouse.app.entity.User;
-import org.apache.ibatis.annotations.Insert;
+import com.goufaning.warehouse.app.domain.User;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * @author liuyanzhao
+ */
 @Mapper
-@Repository // 只用于去除错误提示
 public interface UserMapper {
 
-    @Select("select * from user_332 where name= #{name} and password = #{password}")
-    User findUserByNameAndPassword(@Param("name") String name, @Param("password") String password);
+    /**
+     * 根据ID删除
+     * 
+     * @param userId 用户ID
+     * @return 影响行数
+     */
+    int deleteById(Integer userId);
 
-    @Select("select * from user_332")
-    List<User> getAll();
+    /**
+     * 添加
+     * 
+     * @param user 用户
+     * @return 影响行数
+     */
+    int insert(User user);
 
-    @Insert("insert into user_332(name,password,permissions,description) values(#{name},#{passwor},#{permissions},#{description})")
-    int insert(@Param("name") String name, @Param("password") String password, @Param("permissions") int permissions, @Param("description") String description);
+    /**
+     * 根据ID查询
+     * 
+     * @param userId 用户ID
+     * @return 用户
+     */
+    User getUserById(Integer userId);
+
+    /**
+     * 更新
+     * 
+     * @param user 用户
+     * @return 影响行数
+     */
+    int update(User user);
+
+
+    /**
+     * 获得用户列表
+     * 
+     * @return  用户列表
+     */
+    List<User> listUser() ;
+
+
+    /**
+     * 根据用户名或Email获得用户
+     * 
+     * @param str 用户名或Email
+     * @return 用户
+     */
+    User getUserByNameOrEmail(String str) ;
+
+    /**
+     * 根据用户名查用户
+     * 
+     * @param name 用户名
+     * @return 用户
+     */
+    User getUserByName(String name) ;
+
+    /**
+     * 根据Email查询用户
+     * 
+     * @param email 邮箱
+     * @return 用户
+     */
+    User getUserByEmail(String email) ;
+
 }

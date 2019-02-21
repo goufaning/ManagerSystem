@@ -14,7 +14,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="app" target="1.8" />
-      <module name="core" target="1.5" />
+      <module name="core" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
